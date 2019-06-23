@@ -1,0 +1,28 @@
+{
+  "name": "mp3Downloader",
+  "version": "1.0.0",
+  "description": "MP3 Downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "car"
+  ],
+  "author": "David Koller",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.4",
+    "express": "^4.14.0",
+    "https-proxy-agent": "^2.2.1",
+    "js-sha512": "^0.7.1",
+    "mysql": "^2.12.0",
+    "node-opensignal-api": "0.0.3",
+    "request": "^2.83.0",
+    "swagger-stats": "^0.95.7",
+    "youtube-mp3-downloader": "^0.5.3",
+    "youtube-search": "^1.1.4",
+    "ytdl-core": "^0.29.2"
+  }
+}

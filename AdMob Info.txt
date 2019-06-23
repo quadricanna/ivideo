@@ -1,0 +1,17 @@
+iOS Ads
+
+Admob App ID: ca-app-pub-9233036998725527~2650944496
+
+Banner : ca-app-pub-9233036998725527/8588052480
+Interstitial : ca-app-pub-9233036998725527/1831072445
+Reward: ca-app-pub-9233036998725527/1122240409
+
+
+Andriod
+
+Banner : ca-app-pub-9233036998725527/3214121080
+Interstitial : ca-app-pub-9233036998725527/1681547561
+Reward: ca-app-pub-9233036998725527/4607093803
+
+
+https://itunes.apple.com/app/id1451132521?mt=8

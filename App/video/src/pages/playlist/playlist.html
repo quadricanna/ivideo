@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only small style="float: right;background-color:transparent !important; color: rgb(52, 55, 196) !important;" (click)="buyMoreSongs()">
+              <ion-icon name="musical-note"></ion-icon><span >{{this.amountSongs}}</span>
+            </button>
+          <br/><br/>
+      </ion-buttons>
+    <ion-title>
+        My Playlists
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button  end style="float: right;background-color:transparent !important; color: rgb(52, 55, 196);" (click)="openSettings()">
+            <ion-icon name="settings"></ion-icon>
+        </button>
+      </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="listDir($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+    </ion-refresher>
+  <ion-list>
+    <ion-list-header>Playlists</ion-list-header>
+    <ion-list>
+        <ion-item *ngFor="let dir of diretories; let i = index;">
+        
+          <span (click)="showSubPlayListFiles(dir)">
+              <h2>{{dir.playlist}}</h2>
+            </span>
+            <button ion-button clear item-end (click)="more(dir.playlist, i)">  
+              <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-item>
+      </ion-list>
+  </ion-list>
+</ion-content>

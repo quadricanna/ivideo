@@ -1,0 +1,35 @@
+page-subnews {
+  /*  ion-item{
+        
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.75) 25%), url('../assets/images/splash.png');
+    }
+    
+    ion-card-title, ion-button, h3, p{
+        color:white;
+    }
+     
+    .more{
+        background-color: transparent !important;
+        color:white !important;
+        border-color: white !important;
+    }*/
+    ion-list-header{
+        background-color: white !important;
+        margin-top:25px;
+   }
+
+   ion-content { background-color: transparent !important; }
+
+   .more{
+    background-color: transparent !important;
+    color:rgb(52, 55, 196) !important;
+    border-color: rgb(52, 55, 196) !important;
+}
+
+.download{
+    border-color: rgb(52, 55, 196) !important;
+    border: 1px solid rgb(52, 55, 196)  !important;
+    height:30px !important;
+    font-size:20px !important;
+}
+}

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Charts &amp; More
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only small style="float: right;background-color:transparent !important; color: rgb(52, 55, 196) !important;" (click)="showApps()">
+            <ion-icon name="appstore"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="classic">
+          Classic
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+      <ion-list-header>{{ type }}</ion-list-header>
+      <ion-item *ngFor="let item of getItems(type);let i = index;" (click)="showSubNews(type, i, item.name, '', item.id)">
+          <ion-thumbnail item-start>
+              <img [src]="item.image">
+          </ion-thumbnail>
+        {{ item.name }}
+      </ion-item>
+    </ion-list>
+
+</ion-content>

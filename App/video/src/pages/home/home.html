@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only small (click)="notification()">
+              <ion-icon *ngIf="notWatched == 0" name="ios-notifications-outline"></ion-icon>
+              <ion-icon  *ngIf="notWatched != 0" name="notifications"></ion-icon><span *ngIf="notWatched != 0">{{notWatched}}</span>
+            </button>
+          <br/><br/>
+       
+      </ion-buttons>
+    <ion-title>Search</ion-title>
+    
+   <br/> <br/><br/>
+  <ion-buttons end>
+      <button ion-button clear small end style="float: right;background-color:transparent !important; color: grey; font-size:14px;" (click)="logout()">
+         {{username}} <br/>Logout?
+      </button>
+      <br/><br/>
+    
+  </ion-buttons>
+
+  </ion-navbar>
+  <ion-searchbar type="search" autocomplete="on"  debounce="800" autocorrect="off" (ionInput)="getItems()" [(ngModel)] = "searchModel"></ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+
+  <span *ngFor="let video of videos">
+    <ion-card *ngIf="video.id.videoId">
+      
+        <ion-item >
+          <ion-avatar item-start>
+            <img src="{{video.snippet.thumbnails.default.url}}">
+          </ion-avatar>
+          <h2>{{video.snippet.title}}</h2>
+          <p>{{video.snippet.publishedAt | amTimeAgo}} </p>
+        </ion-item>
+
+        <img *ngIf="video.snippet.channelId == 'false'" src="{{video.snippet.thumbnails.high.url}}" (click)="loadingVideo(video)">
+        
+        <iframe *ngIf="video.snippet.channelId == 'true'" [src]="video.id.videoId | youtube" frameborder="0" width="100%" height="315"></iframe>
+        
+      
+        <ion-card-content>
+          <p>{{video.snippet.description}}</p>
+        </ion-card-content>
+
+        <ion-grid center text-center>
+          <ion-row >
+            <ion-col col-12 align-items-center  >
+              <button ion-button icon-left small outline  (click)="loadingVideo(video)">
+                <ion-icon name="play"></ion-icon>
+                <div>Play</div>
+              </button>
+
+              <button ion-button outline  icon-left outline small  (click)="share(video)">  
+                <ion-icon name="share"></ion-icon>
+                <div>Share</div>
+              </button>
+              <button ion-button outline  icon-left outline small  (click)="more(video)">  
+                <ion-icon name="cloud-download"></ion-icon>
+                <div>Download</div>
+              </button>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </span>
+
+</ion-content>

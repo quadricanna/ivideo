@@ -1,0 +1,46 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cc.fovea.cordova.purchase": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "com.darktalker.cordova.screenshot": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "com.moust.cordova.videoplayer": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "com.omarben.inappreview": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-instagram-plugin": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-launch-review": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-plugin-admob-free": {
+      "PACKAGE_NAME": "your apple app id"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-admob-sdk": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-universal-clipboard": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "your apple app id"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "your apple app id"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>
+      Add more Videos
+    </ion-title>
+
+    <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Back</span>
+          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list-header>
+    Get Free Videos
+  </ion-list-header>
+
+    <ion-list>
+      <ng-container *ngFor="let free of frees; let i = index;">
+        <ion-item *ngIf="(hasRated != '1' && free.key == 'rate')||  free.key != 'rate'" (click) = "reward(free)">
+            <ion-thumbnail  item-start>
+                <img src="{{free.image}}">
+              </ion-thumbnail>
+              <h2>{{free.songs}} Coin</h2>
+              <p text-wrap>{{free.desc}}</p>
+        </ion-item>
+      </ng-container>
+
+    </ion-list>
+
+  <ion-list-header>
+    Choose your package
+  </ion-list-header>
+  <div #paypalbuttoncontainer id="paypal-button-container" ></div>
+
+    <ion-list>
+      <ion-item *ngFor="let payment of payments; let i = index;" (click) = "selectPackage(payment)">
+          <ion-thumbnail item-start>
+            <img src="{{payment.image}}">
+          </ion-thumbnail>
+          <h2>{{payment.songs}} Coins</h2>
+
+          <button ion-button clear item-end>
+            <button item-start text-center *ngIf="selectedPackage == payment">
+                <ion-icon style="margin-top:5px;font-size:25px;color:rgb(52, 55, 196)" name="star" ></ion-icon>
+              </button>
+              <ion-badge style="font-size:15px;" item-end>{{payment.payment}}€</ion-badge>  
+          </button>
+        
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list-header>
+        Redeem Voucher
+      </ion-list-header>
+    
+        <ion-list>
+            <ion-item>
+                <ion-label color="primary"  floating>Voucher</ion-label>
+                <ion-input [value]="voucher" [(ngModel)]="voucher" ></ion-input>
+              </ion-item>
+              <button (click) = "redeemVoucher()" ion-button block>redeem</button>
+
+        </ion-list>
+    
+
+
+</ion-content>

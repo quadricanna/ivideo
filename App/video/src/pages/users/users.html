@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>
+      Share Your Music
+    </ion-title>
+
+    <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Back</span>
+          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+
+</ion-header>
+
+<ion-content>
+  <ion-list-header>
+    Your comment
+  </ion-list-header>
+  <ion-list>
+      <ion-item>
+          <ion-textarea rows="3" maxLength="500" autocorrect="on" [(ngModel)]="comment"></ion-textarea>
+        </ion-item>
+  </ion-list>
+
+  <ion-list-header>
+    Search Your Friends
+  </ion-list-header>
+  <ion-searchbar (ionChange)="getItems()" [(ngModel)] = "searchModel"></ion-searchbar>
+
+    <ion-list-header>
+      All Users
+      </ion-list-header>
+    <ion-card *ngFor="let user of users; let i = index;">
+      <ion-item>
+        <h2>{{user.username}}</h2>
+        <button ion-button outline item-end icon-left outline small  (click)="addUser(user, i)">  
+            <ion-icon name="plus"></ion-icon>
+            <div>Add</div>
+          </button>
+      </ion-item>
+    </ion-card> 
+
+    <ion-list-header>
+        Share with following Friends
+      </ion-list-header>
+      <ion-card>
+          <ion-item *ngFor="let user of usersMusic; let d = index;">
+            <h2>{{user.username}}</h2>
+            <button ion-button outline item-end icon-left outline small (click)="removeUser(user, d)">  
+                <ion-icon name="minus"></ion-icon>
+                <div>Delete</div>
+              </button>
+    
+          </ion-item>
+        </ion-card> 
+  
+
+</ion-content>

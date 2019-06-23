@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        MyMusicloader.de
+    </ion-title>
+    <button *ngIf="isPortrait == 'true'" >
+        <ion-icon style="font-size:25px;" name="phone-portrait" (click)="changePortait()"></ion-icon>
+      </button> 
+      <button *ngIf="isPortrait == 'false'" >
+        <ion-icon style="font-size:25px;" name="phone-landscape" (click)="changePortait()"></ion-icon>
+      </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    
+
+        <ion-card style="white-space: normal;background:none">
+        <br/><br/>
+          <img *ngIf="videoThumb" [src]="videoThumb | imagePipe"/>
+
+                <ion-card-content>
+                    <ion-card *ngIf="hasPayed == 0"style="background:none; background-color:none; border:1px solid #2e2e2e">
+                        <ion-card-title *ngIf="hasPayed == 0" justify-content-center align-items-center style="color:White;text-align: center;">
+                            Remove Player Ads and Donate - 1,99€ <span sytle="font-size:8px;">for one month</span>
+                        </ion-card-title>
+                          <div #paypalbuttoncontainer *ngIf="hasPayed == 0" id="paypal-button-container"></div>
+                          <br/>
+                        </ion-card>  
+                        
+                    <ion-card-title justify-content-center align-items-center style="color:White;text-align: center;">
+                        {{videoTitle | titlePipe}}
+                    </ion-card-title>
+                    
+                    <ion-card style="background:none; background-color:none; border:1px solid #2e2e2e">
+                      <ion-item style="background:none; background-color:none">
+                          <ion-grid> 
+                              <ion-row justify-content-center align-items-center>
+                                  <button *ngIf="isSingleRepeating == 'true'" style="border:1px outset white;border-radius:5px;">
+                                      <ion-icon style="font-size:25px;color:white;" name="repeat" (click)="changeIsSingleRepeating()"></ion-icon>
+                                    </button> 
+                                    <button *ngIf="isSingleRepeating == 'false'">
+                                      <ion-icon style="font-size:25px;color:white;" name="repeat" (click)="changeIsSingleRepeating()"></ion-icon>
+                                    </button>
+
+                                <button>
+                                    <ion-icon style="font-size:35px;color:white;" name="md-skip-backward" (click)="onPlayed('back', 'manual')"></ion-icon>
+                                  </button>
+
+                                  <button>
+                                    <ion-icon style="font-size:45px;color:white;" name="md-play" (click)="playvideo(url)"></ion-icon>
+                                  </button>
+                                  <button>
+                                    <ion-icon style="font-size:35px;color:white;" name="md-skip-forward" (click)="onPlayed('for', 'manual')"></ion-icon>
+                                  </button>
+
+                                  <button *ngIf="isShuffle == 'true'" style="border:1px outset white;border-radius:5px;">
+                                      <ion-icon style="font-size:25px;color:white;" name="shuffle" (click)="changeIsShuffle()"></ion-icon>
+                                    </button> 
+                                    <button *ngIf="isShuffle == 'false'">
+                                      <ion-icon style="font-size:25px;color:white;" name="shuffle" (click)="changeIsShuffle()"></ion-icon>
+                                    </button>
+                              </ion-row>
+                            </ion-grid>
+                            
+                      </ion-item> 
+                    </ion-card>
+                    
+            </ion-card-content>
+          </ion-card>
+
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Settings
+    </ion-title>
+
+    <button style="font-size:16px;float: right;background-color:transparent !important; color: rgb(52, 55, 196);"  (click)="closeModal()">
+        Close
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <h2>You have a problem - Contact us</h2>
+        <p>YOUR MAIL</p>
+    </ion-item>
+
+    <ion-list-header>
+            Your email for password reset
+    </ion-list-header>
+    <ion-item>
+        <ion-label color="primary" fixed>Email</ion-label>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-list-header>
+            Change Password
+    </ion-list-header>
+    <ion-item>
+        <ion-label color="primary" fixed>Old PW</ion-label>
+        <ion-input [(ngModel)]="oldPW" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" fixed>New PW</ion-label>
+        <ion-input [(ngModel)]="newPW" type="password"></ion-input>
+    </ion-item>
+    <ion-item (click)="changePW()">
+        <button ion-button block style="height:50px;font-size:16px;margin-top:15px"> 
+            <ion-icon name="checkmark" large item-start></ion-icon> Save
+        </button> 
+    </ion-item>
+
+    <ion-list-header>
+            Backup
+    </ion-list-header>
+    <ion-item (click)="backUp()">
+      <h3>Last Backup: </h3>
+        {{lastBackup}}
+      <h1>            
+          <button ion-button block style="height:50px;font-size:16px;margin-top:15px"> 
+             <ion-icon name="cloud-upload" item-start></ion-icon> Create New Backup
+          </button> 
+      </h1>  
+    </ion-item>
+
+    <ion-item (click)="restore()">
+        <h1>            
+            <button ion-button block style="height:50px;font-size:16px;margin-top:15px"> 
+               <ion-icon name="sync" item-start></ion-icon> Restore Backup
+            </button> 
+        </h1>
+    </ion-item>
+    <ion-card>
+        <p>                
+            Es gelten die im App-Store hinterlegten AGBs, wenn der Nutzer damit nicht einverstanden ist, Bedarf es einer Widerspruchs-Mail mit dem Benutzername an Your MAIL. Die App darf folglich nicht weiter genutzt werden!
+        </p>
+    </ion-card>
+    
+
+
+          
+  </ion-list>
+</ion-content>
